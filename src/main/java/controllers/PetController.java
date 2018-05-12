@@ -61,14 +61,4 @@ public class PetController {
             return response.as(PetNotFound.class);
         }
     }
-
-    public PetNotFound getDeletedPet() {
-        return given(requestSpecification)
-                .get(appProperties.petId())
-                .then()
-                .statusCode(404)
-                .and()
-                .extract().response().as(PetNotFound.class);
-
-    }
 }
